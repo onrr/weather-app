@@ -2,8 +2,6 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from "axios";
 
 
-const url = ``
-
 export const getData = createAsyncThunk(
   "weather/getData",
   async (city) => {
@@ -12,12 +10,14 @@ export const getData = createAsyncThunk(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${import.meta.env.VITE_API_KEY}&units=metric`
       );
       return response.data;
+    } else {
+      return ""
     }
   });
 
 const initialState = {
   data: [],
-  city: '',
+  city: 'istanbul',
   standing: "idle"
 }
 

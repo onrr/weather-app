@@ -8,7 +8,6 @@ function Search() {
     const res = useSelector((state) => state.weather)
     const dispatch = useDispatch()
   
-    console.log(res)
     useEffect(() => {
      if (res.standing == "idle") dispatch(getData(res.city))
     }, [res.city, res.standing])
