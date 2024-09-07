@@ -15,8 +15,7 @@ function Search() {
     return (
         <input type='text'
             placeholder='Just write the name of city.'
-            className='mt-8 mb-4 focus:opacity-85 opacity-65 block mx-auto px-2 py-6 w-1/2 h-12 bg-transparent text-2xl font-semibold text-gray-300 outline-none border-b-2 border-gray-300 '
-            value={res.city}
+            className='mt-8 mb-4 focus:opacity-85 opacity-65 block mx-auto px-2 py-6 w-full text-2xl lg:w-2/3  h-12 bg-transparent font-semibold text-gray-300 outline-none border-b-2 border-gray-300 '
             onChange={e => dispatch(search(e.target.value))}
         />
     )

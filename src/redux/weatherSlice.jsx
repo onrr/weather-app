@@ -7,7 +7,7 @@ export const getData = createAsyncThunk(
   async (city) => {
     if (city !== "") {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${import.meta.env.VITE_API_KEY}&units=metric`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${import.meta.env.VITE_API_KEY}&units=metric`
       );
       return response.data;
     } else {
@@ -41,7 +41,7 @@ export const weatherSlice = createSlice({
   }
 })
 
-// Action creators are generated for each case reducer function
+
 export const { search } = weatherSlice.actions
 
 export default weatherSlice.reducer
